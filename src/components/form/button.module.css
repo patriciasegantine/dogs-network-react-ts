@@ -1,0 +1,24 @@
+.btn {
+    font-size: 1rem;
+    font-family: var(--type-first);
+    font-weight: 500;
+    border: none;
+    border-radius: 0.4rem;
+    background: var(--yellow-500);
+    color: var(--yellow-900);
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    transition: .1s;
+    min-width: 8rem;
+    margin: .5rem 0;
+}
+
+.btn:hover, .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--yellow-200), 0 0 0 4px var(--yellow-500);
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: wait;
+}
