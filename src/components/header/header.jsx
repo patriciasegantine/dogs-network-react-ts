@@ -11,7 +11,7 @@ export const Header = () => {
           <PawPrint size={25}/>
         </Link>
         <Link to={'/login'} className={styles.login}>
-          Login | Criar
+          Login
           <User size={16}/>
         </Link>
       </nav>

@@ -9,7 +9,7 @@
 
 .nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 4rem;
 }
@@ -25,11 +25,3 @@
     align-items: center;
     column-gap: 5px;
 }
-
-/*.login::after {*/
-/*    content: '';*/
-/*    display: inline-block;*/
-/*    width: 14px;*/
-/*    height: 17px;*/
-/*    background: url('../../assets/usuario.svg')*/
-/*}*/
