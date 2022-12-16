@@ -8,7 +8,7 @@ export const Header = () => {
     <header className={styles.header}>
       <nav className={`container ${styles.nav}`}>
         <Link to={'/'} aria-label={'Dogs - Home'} className={styles.logo}>
-          <PawPrint size={25}/>
+          <PawPrint size={30}/>
         </Link>
         <Link to={'/login'} className={styles.login}>
           Login

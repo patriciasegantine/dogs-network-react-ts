@@ -1,28 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { Input } from '../form/input'
 import { Button } from '../form/button'
+import { UseForm } from '../../hooks/useForm.js'
+
+
 
 export const LoginForm = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+
+  const username = UseForm('email')
+  const password = UseForm('password')
+
+  console.log('username', username.validate)
+  console.log('password', password.validate)
 
   const handleSubmit = (event) => {
-    const url = 'https://dogsapi.origamid.dev/json/jwt-auth/v1/token'
     event.preventDefault()
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    }).then(response => {
-      console.log(response)
-      return response.json
-    }).then(json => console.log(json))
+
+    if(username.validate() && password.validate()) {
+
+      const url = 'https://dogsapi.origamid.dev/json/jwt-auth/v1/token'
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify()
+      }).then(response => {
+        console.log(response)
+        return response.json
+      }).then(json => console.log(json))
+    }
   }
 
   return (
@@ -30,19 +38,21 @@ export const LoginForm = () => {
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input
-          label={'User'}
+          label={'Email'}
           type={'text'}
           name={'username'}
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
+          {...username}
+          // value={username}
+          // onChange={(event) => setUsername(event.target.value)}
         />
 
         <Input
           label={'Password'}
           type={'password'}
           name={'password'}
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
+          {...password}
+          // value={password}
+          // onChange={(event) => setPassword(event.target.value)}
         />
 
         <Button>Send</Button>
