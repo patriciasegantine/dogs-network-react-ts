@@ -1,11 +1,18 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginForm } from './login-form'
 import { LoginCreate } from './login-create'
 import { LoginPasswordLost } from './login-password-lost'
 import { LoginPasswordReset } from './login-password-reset'
+import { UserContext } from '../../use-context/userProvider.jsx'
+import { RouteEnum } from '../../Router-Enum'
 
 export const Login = () => {
+
+  const {login} = React.useContext(UserContext)
+
+  if (login) return <Navigate to={RouteEnum.account}/>
+
   return (
     <section>
       <Routes>

@@ -9,12 +9,12 @@ export const LoginForm = () => {
 
   const username = UseForm()
   const password = UseForm()
-  const {userLogin} = React.useContext(UserContext)
+  const {userLogin, loading, error} = React.useContext(UserContext)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    if(username.validate() && password.validate()) {
+    if (username.validate() && password.validate()) {
       userLogin(username.value, password.value)
     }
   }
@@ -37,7 +37,13 @@ export const LoginForm = () => {
           {...password}
         />
 
-        <Button>Send</Button>
+        {
+          loading
+            ? <Button disabled>loading...</Button>
+            : <Button>Send</Button>
+        }
+
+        {error && <p>{error}</p>}
 
       </form>
       <Link to={'/login/create'}>Sign In</Link>
