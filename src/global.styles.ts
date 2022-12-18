@@ -17,7 +17,7 @@ export const Title = styled.h1`
   font-family: var(--type-second);
   font-size: 3rem;
   line-height: 1;
-  margin: 1rem 0;
+  margin: 10rem 0 1rem;
   position: relative;
   z-index: 1;
 

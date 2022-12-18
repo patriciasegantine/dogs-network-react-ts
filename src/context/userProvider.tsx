@@ -25,28 +25,6 @@ export const UserProvider = ({children}: any) => {
   
   const navigate = useNavigate()
   
-  const createUser = async (username: string, email: string, password: string) => {
-    try {
-      setError(false)
-      setLoading(true)
-      
-      const {url, options} = USER_POST({
-        username,
-        email,
-        password
-      })
-      const response = await fetch(url, options)
-      
-      if (response.ok) await userLogin(username, password)
-      if (!response.ok) throw new Error(`Error: ${response.status}
-      )}`)
-    } catch (e) {
-      console.log(e)
-    } finally {
-      setLoading(false)
-    }
-  }
-  
   const getUser = async (token: string) => {
     const {url, options} = USER_GET(token)
     const response = await fetch(url, options)
@@ -56,6 +34,10 @@ export const UserProvider = ({children}: any) => {
   }
   
   const userLogin = async (username: string, password: string) => {
+    const checkResponse = (response: any) => {
+      if (!response.ok) throw Error('Invalid email or password')
+    }
+    
     try {
       setError(false)
       setLoading(true)
@@ -64,8 +46,7 @@ export const UserProvider = ({children}: any) => {
         password
       })
       const response = await fetch(url, options)
-      
-      if (!response.ok) throw new Error('Error: Invalid email or password')
+      checkResponse(response)
       const {token} = await response.json()
       window.localStorage.setItem('token', token)
       await getUser(token)
@@ -92,17 +73,19 @@ export const UserProvider = ({children}: any) => {
   useEffect(() => {
     const autoLogin = async () => {
       const token = window.localStorage.getItem('token')
+      
+      const checkResponse = (response: any) => {
+        if (!response.ok) throw Error('Invalid Token')
+      }
+      
       if (token) {
         try {
           setError(null)
           setLoading(true)
           const {url, options} = TOKEN_VALIDATE_POST(token)
           const response = await fetch(url, options)
-          
-          if (!response.ok) throw new Error('Invalid Token')
-          
+          checkResponse(response)
           await getUser(token)
-          
         } catch (error) {
           await userLogout()
         } finally {
@@ -116,7 +99,7 @@ export const UserProvider = ({children}: any) => {
   }, [userLogout])
   
   return (
-    <UserContext.Provider value={{createUser, userLogin, userLogout, data, login, loading, error}}>
+    <UserContext.Provider value={{userLogin, userLogout, data, login, loading, error}}>
       {children}
     </UserContext.Provider>
   )

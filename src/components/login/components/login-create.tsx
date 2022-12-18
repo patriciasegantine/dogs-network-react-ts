@@ -1,9 +1,11 @@
 import React from 'react'
-import { ButtonPrimary, Title } from "../../../global.styles";
+import { ButtonPrimary, ErrorMessage, Title } from "../../../global.styles";
 import { Form } from "../login.styles";
 // @ts-ignore
 import { Input } from "../../input.jsx";
 import { UseForm } from "../../../hooks/useForm";
+import { UseFetch } from "../../../hooks/useFetch";
+import { USER_POST } from "../../../api";
 import { UserContext } from "../../../context/userProvider";
 
 export const LoginCreate = () => {
@@ -12,12 +14,24 @@ export const LoginCreate = () => {
   const password = UseForm('')
   
   // @ts-ignore
-  const {createUser, loading} = React.useContext(UserContext)
+  const {userLogin} = React.useContext(UserContext)
+  const {loading, error, request} = UseFetch()
   
   const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault()
-    if (username.validate() && email.validate() && password.validate())
-      createUser(username.value, email.value, password.value)
+    
+    // if (username.validate() && email.validate() && password.validate()) {}
+    
+    const {url, options} = USER_POST({
+      username: username.value,
+      email: email.value,
+      password: username.value
+    })
+    
+    const {response} = await request(url, options)
+    
+    // @ts-ignore
+    if (response.ok) userLogin(username.value, username.value)
     
   };
   
@@ -44,12 +58,15 @@ export const LoginCreate = () => {
           {...password}
         />
         
+        <div>
+          {
+            loading
+              ? <ButtonPrimary disabled>loading...</ButtonPrimary>
+              : <ButtonPrimary>Create</ButtonPrimary>
+          }
+        </div>
         
-        {
-          loading
-            ? <ButtonPrimary disabled>loading...</ButtonPrimary>
-            : <ButtonPrimary>Create</ButtonPrimary>
-        }
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       
       
       </Form>
