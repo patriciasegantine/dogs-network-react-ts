@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 // @ts-ignore
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET, USER_POST } from '../api'
-import { RouteEnum } from '../Router-Enum'
+import { RouteEnum } from '../constants/Router-Enum'
 
 export interface ContextType {
   userLogin: () => void,
@@ -50,7 +50,7 @@ export const UserProvider = ({children}: any) => {
       const {token} = await response.json()
       window.localStorage.setItem('token', token)
       await getUser(token)
-      navigate('/account')
+      navigate(RouteEnum.userAccount)
     } catch (error) {
       // @ts-ignore
       setError(error.message)
@@ -91,6 +91,8 @@ export const UserProvider = ({children}: any) => {
         } finally {
           setLoading(false)
         }
+      } else {
+        setLogin(false)
       }
     }
     

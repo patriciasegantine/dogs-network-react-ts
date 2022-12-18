@@ -5,7 +5,7 @@ import { UseForm } from '../../../hooks/useForm'
 import { UserContext } from '../../../context/userProvider'
 import { ButtonPrimary, ErrorMessage, Title } from '../../../global.styles'
 import { CreateButton, ForgotPassword, Form, SignUp } from '../login.styles'
-import { RouteEnum } from "../../../Router-Enum";
+import { RouteEnum } from "../../../constants/Router-Enum";
 
 export const LoginForm = () => {
   
@@ -45,7 +45,7 @@ export const LoginForm = () => {
           {
             loading
               ? <ButtonPrimary disabled>loading...</ButtonPrimary>
-              : <ButtonPrimary>Send</ButtonPrimary>
+              : <ButtonPrimary>Sign in</ButtonPrimary>
           }
         </div>
         

@@ -1,12 +1,13 @@
 import React from 'react'
 import { ButtonPrimary, ErrorMessage, Title } from "../../../global.styles";
-import { Form } from "../login.styles";
+import { CreateButton, Form, SignUp } from "../login.styles";
 // @ts-ignore
 import { Input } from "../../input.jsx";
 import { UseForm } from "../../../hooks/useForm";
 import { UseFetch } from "../../../hooks/useFetch";
 import { USER_POST } from "../../../api";
 import { UserContext } from "../../../context/userProvider";
+import { RouteEnum } from "../../../constants/Router-Enum";
 
 export const LoginCreate = () => {
   const username = UseForm('username')
@@ -62,12 +63,16 @@ export const LoginCreate = () => {
           {
             loading
               ? <ButtonPrimary disabled>loading...</ButtonPrimary>
-              : <ButtonPrimary>Create</ButtonPrimary>
+              : <ButtonPrimary>Create account</ButtonPrimary>
           }
         </div>
         
         {error && <ErrorMessage>{error}</ErrorMessage>}
-      
+        
+        <SignUp>
+          <p>Already have an account? </p>
+          <CreateButton to={RouteEnum.login}>Sing in</CreateButton>
+        </SignUp>
       
       </Form>
     

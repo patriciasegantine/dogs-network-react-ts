@@ -1,7 +1,7 @@
 import React from 'react'
 import { PawPrint, User } from 'phosphor-react'
 import { UserContext } from '../../context/userProvider'
-import { RouteEnum } from '../../Router-Enum'
+import { RouteEnum } from '../../constants/Router-Enum'
 import { ButtonPrimary, Container } from '../../global.styles'
 import { HeaderContainer, Login, Logo, Nav } from './header.styles.js'
 
@@ -20,7 +20,7 @@ export const Header = () => {
           
           {data ? (
             <>
-              <Login to={RouteEnum.account}>
+              <Login to={RouteEnum.userAccount}>
                 {data.email}
                 <User size={16}/>
               </Login>
