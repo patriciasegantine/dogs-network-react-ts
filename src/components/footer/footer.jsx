@@ -1,12 +1,13 @@
 import React from 'react'
-import styles from './footer.module.css'
+import { Container } from '../../global.styles'
+import { FooterContainer } from './footer.styles'
 
 export const Footer = () => {
   return (
-    <section>
-      <div className={'container'}>
+    <FooterContainer>
+      <Container>
         Footer
-      </div>
-    </section>
+      </Container>
+    </FooterContainer>
   )
 }
