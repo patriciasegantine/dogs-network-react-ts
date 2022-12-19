@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 // @ts-ignore
-import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET, USER_POST } from '../api'
+import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET, USER_POST } from '../constants/api'
 import { RouteEnum } from '../constants/Router-Enum'
 
 export interface ContextType {

@@ -1,13 +1,14 @@
 import React from 'react'
 import { ButtonPrimary, ErrorMessage, Title } from "../../../global.styles";
-import { CreateButton, Form, SignUp } from "../login.styles";
+import { CreateButton, SignUp } from "../login.styles";
 // @ts-ignore
-import { Input } from "../../input.jsx";
+import { Input } from "../../../components/form/input.jsx";
 import { UseForm } from "../../../hooks/useForm";
 import { UseFetch } from "../../../hooks/useFetch";
-import { USER_POST } from "../../../api";
+import { USER_POST } from "../../../constants/api";
 import { UserContext } from "../../../context/userProvider";
 import { RouteEnum } from "../../../constants/Router-Enum";
+import { Form } from "../../../components/form/form.styles";
 
 export const LoginCreate = () => {
   const username = UseForm('username')

@@ -1,9 +1,48 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  body {
+    color: var(--black-color);
+    font-family: var(--type-first);
+    padding-top: 4rem;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  input {
+    display: block;
+    font-size: 1rem;
+    font-family: var(--type-first);
+    color: var(--black-color);
+  }
+
+  a {
+    color: var(--black-color);
+  }
+
+
+`
 
 export const Container = styled.div`
   max-width: 70rem;
   padding: 0 1rem;
   margin: 0 auto;
+`
+
+export const Section = styled.section`
+  //padding: 5rem 0;
 `
 
 export const ErrorMessage = styled.p`
@@ -17,7 +56,6 @@ export const Title = styled.h1`
   font-family: var(--type-second);
   font-size: 3rem;
   line-height: 1;
-  margin: 10rem 0 1rem;
   position: relative;
   z-index: 1;
 
@@ -59,35 +97,4 @@ export const ButtonPrimary = styled.button`
     cursor: wait;
   }
 
-`
-
-export const InputWrapper = styled.div`
-  margin-bottom: 1rem;`
-
-export const Label = styled.label`
-  display: block;
-  font-size: 1rem;
-  line-height: 1;
-  padding-bottom: .3rem;
-
-`
-
-export const InputForm = styled.input`
-
-  border: 1px solid var(--ligth-gray);
-  display: block;
-  width: 100%;
-  font-size: 1rem;
-  padding: .8rem;
-  border-radius: .4rem;
-  background: var(--ligth-gray);
-  transition: .2s;
-
-
-  &:focus, &:hover {
-    outline: none;
-    border-color: var(--yellow-500);
-    background: var(--white);
-    box-shadow: 0 0 0 1px #fea;
-  }
 `

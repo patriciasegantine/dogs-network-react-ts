@@ -1,40 +1,40 @@
 import React from 'react'
 import './global.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { RouteEnum } from './constants/Router-Enum'
+import { GlobalStyle } from "./global.styles";
 import { UserProvider } from "./context/userProvider";
+import { ProtectedRouter } from "./constants/protected-router";
 import { Header } from "./components/header/header";
 import { Footer } from "./components/footer/footer";
-import { Login } from "./components/login/login";
-import { Home } from "./view/home";
-import { User } from "./view/user";
-import { ProtectedRouter } from "./constants/protected-router";
+import { Login } from "./view/login/login";
+import { Home } from "./view/home/home";
+import { User } from "./view/user/user";
 
 function App() {
   
   return (
     <BrowserRouter>
       <UserProvider>
+        <GlobalStyle/>
         <Header/>
         <Routes>
           <Route
-            path={RouteEnum.home}
+            path={'/'}
             element={<Home/>}
           />
           
           <Route
-            path={RouteEnum.login}
+            path={'/login/*'}
             element={<Login/>}
           />
           
           <Route
-            path={RouteEnum.userAccount}
+            path={'/account/*'}
             element={
               <ProtectedRouter>
                 <User/>
               </ProtectedRouter>
             }
-          
           />
         </Routes>
         <Footer/>

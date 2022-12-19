@@ -1,5 +1,6 @@
 import React from 'react'
-import { ErrorMessage, InputForm, InputWrapper, Label } from '../global.styles'
+import { InputForm, InputWrapper, Label } from './form.styles'
+import { ErrorMessage } from '../../global.styles'
 
 export const Input = ({label, type, name, value, onChange, error, onBlur}) => {
   return (

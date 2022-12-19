@@ -8,12 +8,16 @@ export const FormsLogin = styled.div`
   grid-template-columns: repeat(2, 1fr);
   min-height: 100vh;
   gap: 2rem;
+  margin-top: 5rem;
+
 
   &:before {
     content: '';
     display: block;
     background: url(${loginImg}) no-repeat center center;
     background-size: cover;
+    margin-top: -5rem;
+
   }
 
   @media (max-width: 45rem) {
@@ -24,14 +28,6 @@ export const FormsLogin = styled.div`
     &:before {
       display: none;
     }
-  }
-`
-
-export const Form = styled.form`
-  margin-bottom: 2rem;
-
-  @media (max-width: 40rem) {
-    margin: 0 auto;
   }
 `
 

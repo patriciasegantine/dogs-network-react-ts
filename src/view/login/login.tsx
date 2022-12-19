@@ -26,17 +26,17 @@ export const Login = () => {
           />
           
           <Route
-            path={RouteEnum.accountCreate}
+            path={'/create'}
             element={<LoginCreate/>}
           />
           
           <Route
-            path={RouteEnum.forgotPassword}
+            path={'/forgot'}
             element={<LoginPasswordLost/>}
           />
           
           <Route
-            path={RouteEnum.resetPassword}
+            path={'/reset'}
             element={<LoginPasswordReset/>}
           />
         </Routes>

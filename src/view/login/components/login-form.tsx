@@ -1,11 +1,12 @@
 import React from 'react'
 // @ts-ignore
-import { Input } from '../../input.jsx'
+import { Input } from '../../../components/form/input.jsx'
 import { UseForm } from '../../../hooks/useForm'
 import { UserContext } from '../../../context/userProvider'
 import { ButtonPrimary, ErrorMessage, Title } from '../../../global.styles'
-import { CreateButton, ForgotPassword, Form, SignUp } from '../login.styles'
+import { CreateButton, ForgotPassword, SignUp } from '../login.styles'
 import { RouteEnum } from "../../../constants/Router-Enum";
+import { Form } from "../../../components/form/form.styles";
 
 export const LoginForm = () => {
   

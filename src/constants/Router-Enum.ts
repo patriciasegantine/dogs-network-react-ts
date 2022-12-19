@@ -3,9 +3,12 @@ export enum RouteEnum {
   login = '/login',
   // signIn = '/login/signIn',
   accountCreate = '/login/create',
-  forgotPassword = '/login/forgot-password',
-  resetPassword = '/login/password-reset',
+  forgotPassword = '/login/forgot',
+  resetPassword = '/login/reset',
   
   userAccount = '/account',
+  
+  postPhoto = '/account/post',
+  metrics = '/account/metrics'
   
 }
