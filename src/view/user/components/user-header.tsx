@@ -9,15 +9,11 @@ export const UserHeader = () => {
   const [title, setTitle] = useState('')
   const location = useLocation()
   
-  console.log(location)
-  
   useEffect(() => {
     const {pathname} = location
     
     switch (pathname) {
-      // case RouteEnum.userAccount:
-      //   setTitle('Feed')
-      //   break;
+      
       case RouteEnum.metrics:
         setTitle('Metrics')
         break;

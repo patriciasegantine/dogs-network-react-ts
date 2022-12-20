@@ -31,8 +31,6 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: var(--black-color);
   }
-
-
 `
 
 export const Container = styled.div`
@@ -45,20 +43,14 @@ export const Section = styled.section`
   //padding: 5rem 0;
 `
 
-export const ErrorMessage = styled.p`
-  color: var(--danger);
-  font-size: .875rem;
-  margin-top: .25rem;
-`
+
 
 export const Title = styled.h1`
-
   font-family: var(--type-second);
   font-size: 3rem;
   line-height: 1;
   position: relative;
   z-index: 1;
-
 
   &::after {
     content: '';
@@ -97,4 +89,10 @@ export const ButtonPrimary = styled.button`
     cursor: wait;
   }
 
+`
+
+export const ErrorMessage = styled.p`
+  color: var(--danger);
+  font-size: .875rem;
+  margin-top: .25rem;
 `

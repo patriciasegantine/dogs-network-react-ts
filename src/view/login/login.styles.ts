@@ -8,16 +8,14 @@ export const FormsLogin = styled.div`
   grid-template-columns: repeat(2, 1fr);
   min-height: 100vh;
   gap: 2rem;
-  margin-top: 5rem;
-
+  margin-top: 10rem;
 
   &:before {
     content: '';
     display: block;
     background: url(${loginImg}) no-repeat center center;
     background-size: cover;
-    margin-top: -5rem;
-
+    margin-top: -10rem;
   }
 
   @media (max-width: 45rem) {
@@ -41,14 +39,14 @@ export const SignUp = styled.div`
 export const ForgotPassword = styled(Link)`
   display: block;
   text-align: right;
-  color: var(--gray-400);
+  color: ${({ theme }) => theme['gray-400']};
   padding: .1rem 0;
 
   &::after {
     content: '';
     display: block;
     position: absolute;
-    background: var(--gray-400);
+    background: ${({ theme }) => theme['gray-400']};
     right: 0;
     height: 1px;
     width: 130px;
@@ -67,7 +65,7 @@ export const CreateButton = styled(Link)`
   &::after {
     content: '';
     display: flex;
-    background: var(--gray-400);
+    background: ${({ theme }) => theme['gray-400']};
     height: 1px;
     width: 100%;
     border-radius: .2rem;
