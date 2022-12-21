@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { RouteEnum } from "../../../constants/Router-Enum";
 import { Links, MobileButton, NavBar, SignOutLink } from "../user.styles";
 import { UserContext } from "../../../context/userProvider";
-import { ChartLineUp, CirclesFour, DotsThreeOutlineVertical, List, Plus, SignOut } from "phosphor-react";
+import { Camera, ChartLineUp, CirclesFour, DotsThreeOutlineVertical, List, SignOut } from "phosphor-react";
 import { UseMedia } from "../../../hooks/useMedia";
 import { useLocation } from "react-router-dom";
 
@@ -47,7 +47,7 @@ export const UserHeaderNav = ({}) => {
         </Links>
         
         <Links to={RouteEnum.postPhoto}>
-          <Plus size={20}/>
+          <Camera size={20}/>
           {mobile && 'Add Photo'}
         </Links>
         

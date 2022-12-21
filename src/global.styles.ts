@@ -43,8 +43,6 @@ export const Section = styled.section`
   //padding: 5rem 0;
 `
 
-
-
 export const Title = styled.h1`
   font-family: var(--type-second);
   font-size: 3rem;

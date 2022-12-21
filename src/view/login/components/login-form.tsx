@@ -1,6 +1,6 @@
 import React from 'react'
 // @ts-ignore
-import { Input } from '../../../components/form/input.jsx'
+import { Input } from '../../../components/form/input'
 import { UseForm } from '../../../hooks/useForm'
 import { UserContext } from '../../../context/userProvider'
 import { ButtonPrimary, ErrorMessage, Title } from '../../../global.styles'

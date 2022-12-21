@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+// user-header-nav
+
 export const HeaderNavBar = styled.header`
   display: grid;
   grid-template-columns: 1fr auto;
@@ -138,4 +140,52 @@ export const MobileButton = styled.button <{ isMobile: boolean }>`
   margin: 0;
   cursor: pointer;
   transition: .3s ease;
+`
+
+// user-photo-post
+
+export const PhotoSection = styled.section`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 40rem) {
+    grid-template-columns:  1fr;
+  }
+`
+
+export const InputPhoto = styled.input`
+
+  &::file-selector-button {
+    background: ${({theme}) => theme['gray-100']};
+    border-radius: .2rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: .6rem .8rem;
+    margin-right: .5rem;
+    font-family: inherit;
+    font-size: .9rem;
+
+    &:hover, &:focus {
+      background: ${({theme}) => theme['white']};
+      outline: none;
+      border-color: ${({theme}) => theme['yellow-900']};
+      box-shadow: 0 0 0 3px ${({theme}) => theme['gray-100']}
+    }
+
+  }
+`
+
+export const ImgPreview = styled.div`
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center center;
+  
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+  }
 `

@@ -3,6 +3,7 @@ import { useState } from 'react'
 interface Validation {
   email: ValidationTypes
   password: ValidationTypes
+  number: ValidationTypes
 }
 
 interface ValidationTypes {
@@ -16,10 +17,17 @@ const typeValidation: Validation = {
     
     message: 'fill in a correct email'
   },
+  
   password: {
     regex: /^(?=.*\d)(?=.*[#?!@$%^&*-])(?=.*[a-z])(?=.*[A-Z]).{8,}$/g,
     
     message: 'your password must contain at least: 8 letter password, 1 symbol, 1 upper letters, 1 lower case letters and 1 number'
+  },
+  
+  number: {
+    regex: /^\d+$/,
+    
+    message: 'fill only numbers'
   }
 }
 

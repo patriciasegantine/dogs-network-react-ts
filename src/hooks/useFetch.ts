@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react';
 
 export const UseFetch = () => {
   const [data, setData] = useState<any>(null)
-  const [error, setError] = useState<any>(null)
-  const [loading, setLoading] = useState<any>(null)
+  const [error, setError] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
   
   const request = useCallback(async (url: RequestInfo | URL, options: RequestInit | undefined) => {
     let response: any;
@@ -14,7 +14,7 @@ export const UseFetch = () => {
     }
     
     try {
-      setError(null)
+      setError('')
       setLoading(true)
       response = await fetch(url, options)
       json = await response.json()
