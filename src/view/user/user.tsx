@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Section } from "../../global.styles";
+import { Container} from "../../global.styles";
 import { UserHeader } from "./components/user-header";
 import { Route, Routes } from "react-router-dom";
 import { UserPhotoPost } from "./components/user-photo-post";
@@ -8,7 +8,7 @@ import { Feed } from "../../components/feed/feed";
 
 export const User = () => {
   return (
-    <Section>
+    // <Section>
       <Container>
         <UserHeader/>
         
@@ -31,6 +31,6 @@ export const User = () => {
         </Routes>
       
       </Container>
-    </Section>
+    // </Section>
   );
 };

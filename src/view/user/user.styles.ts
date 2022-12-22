@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 // user-header-nav
 
-export const HeaderNavBar = styled.header`
+export const HeaderNavBar = styled.nav`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;

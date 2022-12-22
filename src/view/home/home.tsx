@@ -1,10 +1,17 @@
 import React from 'react'
+import { Feed } from "../../components/feed/feed";
+import { Container, Section } from "../../global.styles";
 
 export const Home = () => {
   return (
-    <section className={'container'}>
-      <h1>Home</h1>
+    <Section >
+      <Container>
+      
+      <Feed />
+      
+      
+      </Container>
 
-    </section>
+    </Section>
   )
 }

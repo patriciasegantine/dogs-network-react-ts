@@ -40,7 +40,7 @@ export const Container = styled.div`
 `
 
 export const Section = styled.section`
-  //padding: 5rem 0;
+  padding: 5rem 0;
 `
 
 export const Title = styled.h1`
