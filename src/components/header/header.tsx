@@ -1,7 +1,7 @@
 import React from 'react'
 import { PawPrint, User } from 'phosphor-react'
 import { UserContext } from '../../context/userProvider'
-import { RouteEnum } from '../../constants/Router-Enum'
+import { RouteEnum } from '../../@enum/Router-Enum'
 import { Container } from '../../global.styles'
 import { HeaderContainer, Login, Logo, Nav } from './header.styles.js'
 

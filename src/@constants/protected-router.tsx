@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../context/userProvider";
-import { RouteEnum } from "./Router-Enum";
+import { RouteEnum } from "../@enum/Router-Enum";
 
 export const ProtectedRouter = ({children}: any) => {
   

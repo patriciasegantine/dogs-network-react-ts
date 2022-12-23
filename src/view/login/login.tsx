@@ -5,7 +5,7 @@ import { LoginCreate } from './components/login-create'
 import { LoginPasswordLost } from './components/login-password-lost'
 import { LoginPasswordReset } from './components/login-password-reset'
 import { UserContext } from '../../context/userProvider'
-import { RouteEnum } from '../../constants/Router-Enum'
+import { RouteEnum } from '../../@enum/Router-Enum'
 import { Container } from '../../global.styles'
 import { FormsLogin } from './login.styles'
 

@@ -5,7 +5,7 @@ import { UseForm } from '../../../hooks/useForm'
 import { UserContext } from '../../../context/userProvider'
 import { ButtonPrimary, ErrorMessage, Title } from '../../../global.styles'
 import { CreateButton, ForgotPassword, SignUp } from '../login.styles'
-import { RouteEnum } from "../../../constants/Router-Enum";
+import { RouteEnum } from "../../../@enum/Router-Enum";
 import { Form } from "../../../components/form/form.styles";
 
 export const LoginForm = () => {

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { UseFetch } from '../../../hooks/useFetch'
-import { PHOTO_GET } from "../../../constants/api";
 import { ErrorMessage } from "../../../global.styles";
 import { Loading } from "../../helper/loading";
-import { FeedContainer, ImgContainer, ImgItem, ImgPhoto, Views } from "../feed.styles";
+import { FeedContainer, FeedImg, FeedImgContainer, FeedImgItem, FeedViews } from "../feed.styles";
 import { Eye } from "phosphor-react";
+import { PHOTOS_GET } from "../../../@api/api";
 
 type photoType = {
   acessos: string;
@@ -13,48 +13,50 @@ type photoType = {
   id: React.Key | null | undefined;
 }
 
-export const FeedPhotos = () => {
+export const FeedPhotos = ({setModalPhoto}) => {
   
   const {data, loading, error, request} = UseFetch()
   
-  
-  
   useEffect(() => {
     
-    async function fetchPhotos(){
+    async function fetchPhotos() {
       
-      const {url, options } = PHOTO_GET({page: 1, total: 10, user: 0})
+      const {url, options} = PHOTOS_GET({page: 1, total: 10, user: 0})
       // @ts-ignore
-      const {response, json} = await request(url, options)
-    
-    
-    console.log('oi', data)
+      const {json} = await request(url, options)
+      
     }
     
     fetchPhotos()
-  
+    
   }, [request])
   
-  // @ts-ignore
+  useEffect(() => {
+  
+  }, [])
+  
   // @ts-ignore
   return (
     <FeedContainer>
-  
-      { loading
+      
+      {loading
         ? <Loading/>
-        : <ImgContainer>
+        : <FeedImgContainer>
           {
-            data?.map((item: photoType) =>
-              <ImgItem key={item.id}>
-                <ImgPhoto src={item.src} alt={item.title} />
-                <Views>
-                  <Eye size={20} />
-                  {item.acessos}
-                </Views>
-              </ImgItem>
-          )
+            data?.map((photo: photoType) =>
+              <FeedImgItem
+                key={photo.id}
+                onClick={() => setModalPhoto(photo)}
+              >
+                <FeedImg src={photo.src} alt={photo.title}/>
+                <FeedViews>
+                  <Eye size={20}/>
+                  {photo.acessos}
+                </FeedViews>
+              </FeedImgItem>
+            )
           }
-        </ImgContainer>
+        </FeedImgContainer>
       }
       
       <ErrorMessage>{error}</ErrorMessage>

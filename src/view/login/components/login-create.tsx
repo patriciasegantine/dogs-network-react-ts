@@ -5,9 +5,9 @@ import { CreateButton, SignUp } from "../login.styles";
 import { Input } from "../../../components/form/input";
 import { UseForm } from "../../../hooks/useForm";
 import { UseFetch } from "../../../hooks/useFetch";
-import { USER_POST } from "../../../constants/api";
+import { USER_POST } from "../../../@api/api";
 import { UserContext } from "../../../context/userProvider";
-import { RouteEnum } from "../../../constants/Router-Enum";
+import { RouteEnum } from "../../../@enum/Router-Enum";
 import { Form } from "../../../components/form/form.styles";
 
 export const LoginCreate = () => {

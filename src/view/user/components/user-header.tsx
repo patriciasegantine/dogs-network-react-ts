@@ -3,7 +3,7 @@ import { Title } from "../../../global.styles";
 import { UserHeaderNav } from "./user-header-nav";
 import { HeaderNavBar } from "../user.styles";
 import { useLocation } from "react-router-dom";
-import { RouteEnum } from "../../../constants/Router-Enum";
+import { RouteEnum } from "../../../@enum/Router-Enum";
 
 export const UserHeader = () => {
   const [title, setTitle] = useState('')

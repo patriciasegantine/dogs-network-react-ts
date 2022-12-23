@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { RouteEnum } from "../../../constants/Router-Enum";
+import { RouteEnum } from "../../../@enum/Router-Enum";
 import { Links, MobileButton, NavBar, SignOutLink } from "../user.styles";
 import { UserContext } from "../../../context/userProvider";
 import { Camera, ChartLineUp, CirclesFour, DotsThreeOutlineVertical, List, SignOut } from "phosphor-react";

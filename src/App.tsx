@@ -5,7 +5,7 @@ import { GlobalStyle } from "./global.styles";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./@themes/defalultTheme";
 import { UserProvider } from "./context/userProvider";
-import { ProtectedRouter } from "./constants/protected-router";
+import { ProtectedRouter } from "./@constants/protected-router";
 import { Header } from "./components/header/header";
 import { Footer } from "./components/footer/footer";
 import { Login } from "./view/login/login";

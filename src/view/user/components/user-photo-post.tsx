@@ -4,12 +4,10 @@ import { Input } from "../../../components/form/input";
 import { ButtonPrimary, ErrorMessage } from "../../../global.styles";
 import { UseForm } from "../../../hooks/useForm";
 import { UseFetch } from "../../../hooks/useFetch";
-import { PHOTO_POST } from "../../../constants/api";
-import { ImgPreview, InputPhoto, PhotoSection} from "../user.styles";
+import { PHOTO_POST } from "../../../@api/api";
+import { ImgPreview, InputPhoto, PhotoSection } from "../user.styles";
 import { useNavigate } from "react-router-dom";
-import { RouteEnum } from "../../../constants/Router-Enum";
-
-
+import { RouteEnum } from "../../../@enum/Router-Enum";
 
 export const UserPhotoPost = () => {
   const [img, setImg] = useState<any>({})
@@ -46,7 +44,7 @@ export const UserPhotoPost = () => {
   }
   
   useEffect(() => {
-    if(data) navigate(RouteEnum.userAccount)
+    if (data) navigate(RouteEnum.userAccount)
   }, [data, navigate])
   
   return (
@@ -76,25 +74,25 @@ export const UserPhotoPost = () => {
           id={'img'}
           onChange={handleImgChange}
         />
-  
+        
         {
           loading
             ? <ButtonPrimary disabled> Posting... </ButtonPrimary>
             : <ButtonPrimary> Post </ButtonPrimary>
         }
-  
+        
         {
           error && <ErrorMessage>{error}</ErrorMessage>
         }
       
       </form>
       
-        {img.preview &&
-          <ImgPreview
+      {img.preview &&
+        <ImgPreview
           style={{backgroundImage: `url(${img.preview})`}}
-          >
+        >
 
-          </ImgPreview>}
+        </ImgPreview>}
     </PhotoSection>
   );
 };
