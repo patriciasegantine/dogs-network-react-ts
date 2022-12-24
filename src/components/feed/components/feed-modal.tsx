@@ -6,21 +6,22 @@ import { Loading } from "../../helper/loading";
 import { PhotoContent } from "../../photo/photo-content";
 import { FeedModalContainer } from "../feed.styles";
 
-export const FeedModal = ({photo, setModalPhoto}) => {
+// @ts-ignore
+export const FeedModal: React.FC<any> = ({photo, setModalPhoto}) => {
   
   const {data, error, loading, request} = UseFetch()
   
   useEffect(() => {
     const {url, options} = PHOTO_GET(photo.id)
+    // @ts-ignore
     const {json} = request(url, options)
     
   }, [photo, request])
   
-  const handleOutsideClick = (event) => {
+  const handleOutsideClick = (event: { target: any; currentTarget: any; }) => {
     if (event.target === event.currentTarget) {
       setModalPhoto(null)
     }
-    
   }
   
   return (

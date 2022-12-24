@@ -1,24 +1,25 @@
 import React from 'react';
 import {
-  CloseButtonModal,
   LinkAuthor, PhotoAttributes,
   PhotoContainer,
   PhotoDetails,
   PhotoDetailsHeader,
   PhotoImg,
   PhotoView
-} from "./photo.styles";
+} from "./photo-content.styles";
 import { Title } from "../../global.styles";
 import { Link } from "react-router-dom";
 import { Eye } from "phosphor-react";
+import { PhotoComments } from "./components/photo-comments";
 
-export const PhotoContent = ({data, setModalPhoto}) => {
+// @ts-ignore
+export const PhotoContent: React.FC<any> = ({data}) => {
   
   const {photo, comments} = data
   
   return (
     <PhotoContainer>
-      <CloseButtonModal size={20} onClick={() => setModalPhoto(null)}/>
+      {/*<CloseButtonModal size={20} onClick={() => setModalPhoto(null)}/>*/}
       <PhotoImg>
         <img src={photo.src} alt={photo.title}/>
       </PhotoImg>
@@ -45,12 +46,7 @@ export const PhotoContent = ({data, setModalPhoto}) => {
         </PhotoAttributes>
       </PhotoDetails>
       
-      {/*{comments.map(comment =>*/}
-      {/*  <PhotoComments key={comment.comment_post_ID}>*/}
-      {/*    <CommentContent>{comment.comment_content}</CommentContent>*/}
-      {/*    <CommentAuthor>{comment.comment_author}</CommentAuthor>*/}
-      {/*  </PhotoComments>*/}
-      {/*)}*/}
+      <PhotoComments comments={comments} id={photo.id}/>
     
     </PhotoContainer>
   );

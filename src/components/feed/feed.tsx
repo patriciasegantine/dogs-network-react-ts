@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FeedModal } from "./components/feed-modal";
 import { FeedPhotos } from "./components/feed-photos";
 
-export const Feed: React<any> = () => {
+export const Feed: React.FC<any> = () => {
   const [modalPhoto, setModalPhoto] = useState<any>(null)
   
   return (

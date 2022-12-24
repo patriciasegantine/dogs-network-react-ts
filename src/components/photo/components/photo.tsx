@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Photo = () => {
+export const Photo: React.FC = () => {
   return (
     <div>
     

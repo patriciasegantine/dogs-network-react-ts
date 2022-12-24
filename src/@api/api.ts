@@ -63,7 +63,7 @@ export function PHOTO_POST(formData: any, token: any) {
   }
 }
 
-export function PHOTOS_GET({page, total, user}) {
+export function PHOTOS_GET({page, total, user}: any) {
   return {
     url: `${API_URL}/api/photo/?_page=${page}&total=${total}&_user=${user}`,
     options: {
@@ -73,12 +73,26 @@ export function PHOTOS_GET({page, total, user}) {
   }
 }
 
-export function PHOTO_GET(id) {
+export function PHOTO_GET(id: any) {
   return {
     url: `${API_URL}/api/photo/${id}`,
     options: {
       method: 'GET',
       cache: 'no-store'
     }
+  }
+}
+
+export function COMMENT_POST(id: any, body: any, token: string | null) {
+  return {
+    url: `${API_URL}/api/comment/${id}`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(body)
+    },
   }
 }

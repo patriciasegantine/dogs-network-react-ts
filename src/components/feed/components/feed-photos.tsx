@@ -13,7 +13,7 @@ type photoType = {
   id: React.Key | null | undefined;
 }
 
-export const FeedPhotos = ({setModalPhoto}) => {
+export const FeedPhotos: React.FC<any> = ({setModalPhoto}) => {
   
   const {data, loading, error, request} = UseFetch()
   
