@@ -72,6 +72,24 @@ export const LinkAuthor = styled(Link)`
   }
 `
 
+export const ButtonDeletePhoto = styled.button`
+  background: ${({theme}) => theme['gray-200']};
+  padding: .3rem .6rem;
+  line-height: 1;
+  font-size: .875rem;
+  font-family: ${({theme}) => theme['type-first']};
+  border: 1px solid transparent;
+  border-radius: .4rem;
+  transition: .1s;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    outline: none;
+    border-color: var(--yellow-500);
+    background: var(--white);
+    box-shadow: 0 0 0 1px #fea;
+  }
+`
 export const PhotoView = styled.span`
   display: flex;
   align-items: center;
@@ -85,7 +103,12 @@ export const CloseButtonModal = styled(XCircle)`
   position: fixed;
   right: 10px;
   top: 10px;
-  color: ${({theme}) => theme['gray-400']}
+  color: ${({theme}) => theme['gray-400']};
+
+  &:hover, &:focus {
+    outline: none;
+    color: var(--yellow-500);
+  }
 `
 
 export const CommentContainer = styled.ul`
@@ -136,8 +159,8 @@ export const CommentTextArea = styled.textarea`
 
   &:hover, &:focus {
     outline: none;
-    border-color: var(--yellow-500);
-    background: var(--white);
+    border-color: ${({theme}) => theme['gray-100']};
+    background: ${({theme}) => theme['white']};
     box-shadow: 0 0 0 1px #fea;
   }
 

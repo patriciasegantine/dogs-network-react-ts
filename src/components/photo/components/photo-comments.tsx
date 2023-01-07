@@ -35,8 +35,6 @@ export const PhotoComments: React.FC<any> = ({id, comments}) => {
   
   useEffect(() => {
     commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
-    console.log('commentsSection', commentsSection)
-    
   }, [comment])
   
   return (
