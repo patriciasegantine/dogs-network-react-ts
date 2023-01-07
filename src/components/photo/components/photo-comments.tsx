@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { UserContext } from "../../../context/userProvider";
 // @ts-ignore
 import { PaperPlaneTilt } from "phosphor-react";
@@ -14,8 +14,9 @@ export const PhotoComments: React.FC<any> = ({id, comments}) => {
   const [newComment, setNewComment] = useState<any>(() => comments)
   
   // @ts-ignore
-  const {login} = React.useContext(UserContext)
+  const {login} = useContext(UserContext)
   const {request, error} = UseFetch()
+  const commentsSection = useRef(null)
   
   const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault()
@@ -29,19 +30,20 @@ export const PhotoComments: React.FC<any> = ({id, comments}) => {
       
       setComment('')
       setNewComment((comments: any) => [...comments, json])
-      
     }
   };
   
   useEffect(() => {
-  
-  }, [comments, request])
+    commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
+    console.log('commentsSection', commentsSection)
+    
+  }, [comment])
   
   return (
     
     <>
       
-      <CommentContainer>
+      <CommentContainer ref={commentsSection}>
         {newComment.map((comment: any) =>
           <CommentItem key={comment.comment_ID}>
             <CommentAuthor>{comment.comment_author}:</CommentAuthor>

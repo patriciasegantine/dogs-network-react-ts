@@ -14,7 +14,7 @@ export const PhotoContainer = styled.div`
   overflow: hidden;
   opacity: 0;
   transform: scale(.8);
-  animation: ${scaleUpAnimation} .8s forwards;
+  animation: ${scaleUpAnimation} .5s forwards;
 
   @media (max-width: 64rem) {
     height: auto;
@@ -54,9 +54,7 @@ export const PhotoAttributes = styled.div`
     width: 2px;
     background: ${({theme}) => theme['black-200']};
     margin-top: 5px;
-
   }
-
 
 `
 
@@ -90,7 +88,7 @@ export const CloseButtonModal = styled(XCircle)`
   color: ${({theme}) => theme['gray-400']}
 `
 
-export const CommentContainer = styled.div`
+export const CommentContainer = styled.ul`
   overflow-y: auto;
   word-break: break-word;
   padding: 0 2rem;
