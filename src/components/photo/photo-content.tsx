@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import {
   ButtonDeletePhoto,
-  CloseButtonModal,
-  LinkAuthor, PhotoAttributes,
+  CloseButtonModal, LinkAuthor,
+  PhotoAttributes,
   PhotoContainer,
   PhotoDetails,
   PhotoDetailsHeader,
@@ -16,11 +16,12 @@ import { PhotoComments } from "./components/photo-comments";
 import { UserContext } from "../../context/userProvider";
 import { UseFetch } from "../../hooks/useFetch";
 import { PHOTO_DELETE } from "../../@api/api";
+import { SkeletonImage } from "../helper/skeleton-image/skeleton-image";
 
 // @ts-ignore
 export const PhotoContent: React.FC<any> = ({data, setModalPhoto}) => {
   const {photo, comments} = data
-  const user = useContext(UserContext)
+  const user = useContext<any>(UserContext)
   const {request, loading} = UseFetch()
   
   async function handleDeletePhoto() {
@@ -35,18 +36,22 @@ export const PhotoContent: React.FC<any> = ({data, setModalPhoto}) => {
     }
     
   }
+  //
+  // useEffect(() => {
+  //   console.log('user', user)
+  // }, [user])
   
   return (
     <PhotoContainer>
       <CloseButtonModal size={20} onClick={() => setModalPhoto(false)}/>
       <PhotoImg>
-        <img src={photo.src} alt={photo.title}/>
+        <SkeletonImage src={photo.src} alt={photo.title}/>
       </PhotoImg>
       
       <PhotoDetails>
         <PhotoDetailsHeader>
           
-          {user.data.username === photo.author
+          {user.data?.username === photo.author
             ? <ButtonDeletePhoto disabled={loading} onClick={handleDeletePhoto}>
               {loading
                 ? 'Loading'

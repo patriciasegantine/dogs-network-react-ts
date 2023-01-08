@@ -40,7 +40,6 @@ export const FeedImgItem = styled.span`
       display: flex;
     }
   }
-
 `
 
 export const FeedImg = styled.img`

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { UseFetch } from "../../../hooks/useFetch";
 import { PHOTO_GET } from "../../../@api/api";
 import { ErrorMessage } from "../../../global.styles";
-import { Loading } from "../../helper/loading";
+import { Loading } from "../../helper/loading/loading";
 import { PhotoContent } from "../../photo/photo-content";
 import { FeedModalContainer } from "../feed.styles";
 

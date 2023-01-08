@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { scaleUpAnimation } from "../../view/animation.styles";
+import { scaleUpAnimation } from "../../animation.styles";
 import { XCircle } from "phosphor-react";
 
 export const PhotoContainer = styled.div`

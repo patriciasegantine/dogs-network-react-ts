@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { UseFetch } from '../../../hooks/useFetch'
 import { ErrorMessage } from "../../../global.styles";
-import { Loading } from "../../helper/loading";
-import { FeedContainer, FeedImg, FeedImgContainer, FeedImgItem, FeedViews } from "../feed.styles";
+import { Loading } from "../../helper/loading/loading";
+import { FeedContainer, FeedImgContainer, FeedImgItem, FeedViews } from "../feed.styles";
 import { Eye } from "phosphor-react";
 import { PHOTOS_GET } from "../../../@api/api";
+import { SkeletonImage } from "../../helper/skeleton-image/skeleton-image";
 
 type photoType = {
   acessos: string;
@@ -48,7 +49,7 @@ export const FeedPhotos: React.FC<any> = ({setModalPhoto}) => {
                 key={photo.id}
                 onClick={() => setModalPhoto(photo)}
               >
-                <FeedImg src={photo.src} alt={photo.title}/>
+                <SkeletonImage src={photo.src} alt={photo.title}/>
                 <FeedViews>
                   <Eye size={20}/>
                   {photo.acessos}

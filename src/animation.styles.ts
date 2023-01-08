@@ -8,3 +8,13 @@ export const scaleUpAnimation = keyframes`
     transform: initial;
   }
 `
+
+export const skeletonAnimation = keyframes`
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -200%;
+
+  }
+`
