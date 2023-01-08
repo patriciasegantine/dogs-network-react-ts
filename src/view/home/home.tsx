@@ -4,14 +4,10 @@ import { Container, Section } from "../../global.styles";
 
 export const Home = () => {
   return (
-    <Section >
+    <Section>
       <Container>
-      
-      <Feed />
-      
-      
+        <Feed/>
       </Container>
-
     </Section>
   )
 }
