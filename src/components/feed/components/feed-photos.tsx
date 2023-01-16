@@ -14,27 +14,33 @@ type photoType = {
   id: React.Key | null | undefined;
 }
 
-export const FeedPhotos: React.FC<any> = ({setModalPhoto}) => {
+export const FeedPhotos: React.FC<any> = ({user, setModalPhoto, page, setInfinitePage}) => {
   
   const {data, loading, error, request} = UseFetch()
   
   useEffect(() => {
     
     async function fetchPhotos() {
+      const totalItemsPage = 3;
       
-      const {url, options} = PHOTOS_GET({page: 1, total: 10, user: 0})
+      const {url, options} = PHOTOS_GET({
+        page,
+        totalItemsPage,
+        user
+      })
       // @ts-ignore
-      const {json} = await request(url, options)
-      
+      const {response, json} = await request(url, options)
+      if (response.ok && json.length < totalItemsPage) setInfinitePage(false)
+      console.log(json)
     }
     
     fetchPhotos()
     
-  }, [request])
+  }, [request, user, page])
   
   useEffect(() => {
   
-  }, [])
+  }, [setInfinitePage])
   
   // @ts-ignore
   return (

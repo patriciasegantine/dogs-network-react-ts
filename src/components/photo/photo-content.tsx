@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import {
   ButtonDeletePhoto,
   CloseButtonModal, LinkAuthor,
@@ -36,10 +36,6 @@ export const PhotoContent: React.FC<any> = ({data, setModalPhoto}) => {
     }
     
   }
-  //
-  // useEffect(() => {
-  //   console.log('user', user)
-  // }, [user])
   
   return (
     <PhotoContainer>
