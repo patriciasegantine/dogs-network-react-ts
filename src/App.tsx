@@ -11,6 +11,7 @@ import { Footer } from "./components/footer/footer";
 import { Login } from "./view/login/login";
 import { Home } from "./view/home/home";
 import { User } from "./view/user/user";
+import { Photo } from "./components/photo/components/photo";
 
 function App() {
   
@@ -38,6 +39,11 @@ function App() {
                   <User/>
                 </ProtectedRouter>
               }
+            />
+            
+            <Route
+              path={'/photo/:id'}
+              element={<Photo/>}
             />
           </Routes>
           <Footer/>

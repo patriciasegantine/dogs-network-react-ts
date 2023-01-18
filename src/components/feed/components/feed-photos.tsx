@@ -21,7 +21,7 @@ export const FeedPhotos: React.FC<any> = ({user, setModalPhoto, page, setInfinit
   useEffect(() => {
     
     async function fetchPhotos() {
-      const totalItemsPage = 3;
+      const totalItemsPage = 6;
       
       const {url, options} = PHOTOS_GET({
         page,
@@ -66,7 +66,10 @@ export const FeedPhotos: React.FC<any> = ({user, setModalPhoto, page, setInfinit
         </FeedImgContainer>
       }
       
-      <ErrorMessage>{error}</ErrorMessage>
+      {
+        error &&
+        <ErrorMessage>{error}</ErrorMessage>
+      }
     </FeedContainer>
   );
 };

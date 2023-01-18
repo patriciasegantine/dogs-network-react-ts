@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { scaleUpAnimation } from "../../animation.styles";
 import { XCircle } from "phosphor-react";
 
-export const PhotoContainer = styled.div`
+export const PhotoContainer = styled.section`
   margin: auto;
   height: 36rem;
   border-radius: .4rem;
@@ -30,6 +30,40 @@ export const PhotoImg = styled.div`
   @media (max-width: 64rem) {
     grid-row: 1;
   }
+`
+
+export const PhotoContainerUrl = styled.div`
+  margin: 50px auto;
+  place-items: center;
+  padding: 4rem 10rem;
+
+  section {
+    grid-template-columns: 1fr;
+    height: auto;
+    place-items: center;
+    margin: 0 auto;
+
+  }
+
+  img {
+    grid-row: 1;
+    border-radius: .4rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  div {
+    padding: 0;
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  ul, form {
+    width: 100%;
+    padding: 0;
+
+  }
+
 `
 
 export const PhotoDetails = styled.div`
@@ -90,6 +124,7 @@ export const ButtonDeletePhoto = styled.button`
     box-shadow: 0 0 0 1px #fea;
   }
 `
+
 export const PhotoView = styled.span`
   display: flex;
   align-items: center;
@@ -121,14 +156,11 @@ export const CommentContent = styled.span`
   margin-left: .5rem;
 `
 
-export const PhotoComment = styled.div`
-  padding: .3rem 2rem;
-  overflow-y: auto;
-`
 export const CommentItem = styled.div`
   padding-bottom: .5rem;
 
 `
+
 export const CommentAuthor = styled.b`
 
 `
@@ -140,6 +172,7 @@ export const CommentForm = styled.form`
   margin: 1rem;
 
 `
+
 export const CommentTextArea = styled.textarea`
   display: block;
   width: 100%;
@@ -167,6 +200,7 @@ export const CommentTextArea = styled.textarea`
 
 
 `
+
 export const CommentButton = styled.button`
   border: none;
   padding: .5rem;

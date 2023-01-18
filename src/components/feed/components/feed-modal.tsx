@@ -29,7 +29,7 @@ export const FeedModal: React.FC<any> = ({photo, setModalPhoto}) => {
       
       {error && <ErrorMessage>{error}</ErrorMessage>}
       {loading && <Loading/>}
-      {data && <PhotoContent data={data} setModalPhoto={setModalPhoto}/>}
+      {data && <PhotoContent data={data} onClick={() => setModalPhoto(false)}/>}
     </FeedModalContainer>
   )
 }
