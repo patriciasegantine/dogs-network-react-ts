@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { FeedModal } from "./components/feed-modal";
 import { FeedPhotos } from "./components/feed-photos";
 
-export const Feed: React.FC<any> = ({user}) => {
+interface FeedTypes {
+  user: string | number
+}
+
+export const Feed: React.FC<FeedTypes> = ({user}) => {
   const [modalPhoto, setModalPhoto] = useState<any>(null)
   const [pages, setPage] = useState<number[]>([1])
   const [infinitePage, setInfinitePage] = useState<boolean>(true)

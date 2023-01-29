@@ -6,7 +6,8 @@ import { ErrorMessage } from "../../../global.styles";
 import { Loading } from "../../helper/loading/loading";
 import { PhotoContent } from "../photo-content";
 import { RouteEnum } from "../../../@enum/Router-Enum";
-import { PhotoContainer, PhotoContainerUrl } from "../photo-content.styles";
+import { PhotoContainerUrl } from "../photo-content.styles";
+import { Head } from "../../helper/head";
 
 export const Photo = () => {
   
@@ -28,6 +29,7 @@ export const Photo = () => {
           : <>
             {data &&
               <PhotoContainerUrl>
+                <Head title={data.photo.title}/>
                 <PhotoContent data={data} onClick={() => navigate(RouteEnum.home)}/>
               </PhotoContainerUrl>
             }

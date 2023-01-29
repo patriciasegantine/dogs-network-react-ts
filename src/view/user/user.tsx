@@ -7,6 +7,7 @@ import { UserMetrics } from "./components/user-metrics";
 import { Feed } from "../../components/feed/feed";
 import { UserContext } from "../../context/userProvider";
 import { NotFound } from "../../components/not-found/not-found";
+import { Head } from "../../components/helper/head";
 
 export const User = () => {
   
@@ -15,6 +16,7 @@ export const User = () => {
     // <Section>
     <Container>
       <UserHeader/>
+      <Head title={'Account'}/>
       
       <Routes>
         <Route

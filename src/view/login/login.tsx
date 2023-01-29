@@ -9,6 +9,7 @@ import { RouteEnum } from '../../@enum/Router-Enum'
 import { Container } from '../../global.styles'
 import { FormsLogin } from './login.styles'
 import { NotFound } from "../../components/not-found/not-found";
+import { Head } from "../../components/helper/head";
 
 export const Login = () => {
   
@@ -20,6 +21,7 @@ export const Login = () => {
   return (
     <Container>
       <FormsLogin>
+        <Head title={'Login'}/>
         <Routes>
           <Route
             path={'/'}

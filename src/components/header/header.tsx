@@ -1,9 +1,10 @@
 import React from 'react'
-import { PawPrint, User } from 'phosphor-react'
+import { User } from 'phosphor-react'
 import { UserContext } from '../../context/userProvider'
 import { RouteEnum } from '../../@enum/Router-Enum'
 import { Container } from '../../global.styles'
-import { HeaderContainer, Login, Logo, Nav } from './header.styles.js'
+import { HeaderContainer, IconLogo, Login, Logo, LogoTitle, Nav } from './header.styles.js'
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   // @ts-ignore
@@ -13,9 +14,12 @@ export const Header = () => {
     <HeaderContainer>
       <Container>
         <Nav>
-          <Logo to={'/'} aria-label={'Dogs - Home'}>
-            <PawPrint size={35}/>
-          </Logo>
+          <NavLink to={'/'} aria-label={'Dogs - Home'}>
+            <Logo>
+              <IconLogo/>
+              <LogoTitle>Pets</LogoTitle>
+            </Logo>
+          </NavLink>
           
           {data ? (
             <>

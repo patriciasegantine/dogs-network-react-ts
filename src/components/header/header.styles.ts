@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { PawPrint } from "phosphor-react";
 
 export const HeaderContainer = styled.header`
   box-shadow: var(--box-shadow);
@@ -17,18 +18,25 @@ export const Nav = styled.nav`
   height: 4rem;
 `
 
-export const Logo = styled(Link)`
-  padding: .5rem 0;
+export const Logo = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
   gap: .2rem;
+  line-height: 1;
+
 `
 
-export const LogoTitle = styled.h1`
-  font-family: var(--type-second);
+export const IconLogo = styled(PawPrint)`
+  line-height: 1;
+  font-size: 2rem;
+`
 
-  font-size: 30px;
+export const LogoTitle = styled.h3`
+  font-family: var(--type-second);
+  font-size: 2rem;
+  font-weight: 200;
+
 `
 
 export const Login = styled(Link)`

@@ -9,6 +9,7 @@ import { USER_POST } from "../../../@api/api";
 import { UserContext } from "../../../context/userProvider";
 import { RouteEnum } from "../../../@enum/Router-Enum";
 import { Form } from "../../../components/form/form.styles";
+import { Head } from "../../../components/helper/head";
 
 export const LoginCreate = () => {
   const username = UseForm('username')
@@ -39,6 +40,8 @@ export const LoginCreate = () => {
   
   return (
     <section>
+      <Head title={'Create account'}/>
+      
       <Title className={'title'}>Sing in</Title>
       <Form onSubmit={handleSubmit}>
         <Input
@@ -48,7 +51,7 @@ export const LoginCreate = () => {
           {...username}
         />
         <Input
-          label={'Email'} s
+          label={'Email'}
           type={'email'}
           name={'email'}
           {...email}

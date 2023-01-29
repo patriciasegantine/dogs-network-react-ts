@@ -8,6 +8,7 @@ import { PHOTO_POST } from "../../../@api/api";
 import { ImgPreview, InputPhoto, PhotoSection } from "../user.styles";
 import { useNavigate } from "react-router-dom";
 import { RouteEnum } from "../../../@enum/Router-Enum";
+import { Head } from "../../../components/helper/head";
 
 export const UserPhotoPost = () => {
   const [img, setImg] = useState<any>({})
@@ -49,6 +50,8 @@ export const UserPhotoPost = () => {
   
   return (
     <PhotoSection>
+      <Head title={'Post Photo'}/>
+      
       <form onSubmit={handleSubmit}>
         <Input
           label={'Name'}

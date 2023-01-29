@@ -18,8 +18,7 @@ import { UseFetch } from "../../hooks/useFetch";
 import { PHOTO_DELETE } from "../../@api/api";
 import { SkeletonImage } from "../helper/skeleton-image/skeleton-image";
 
-// @ts-ignore
-export const PhotoContent: React.FC<any> = ({data, setModalPhoto, onClick}) => {
+export const PhotoContent: React.FC<any> = ({data, onClick}) => {
   const {photo, comments} = data
   const user = useContext<any>(UserContext)
   const {request, loading} = UseFetch()
@@ -39,6 +38,7 @@ export const PhotoContent: React.FC<any> = ({data, setModalPhoto, onClick}) => {
   
   return (
     <PhotoContainer>
+      
       <CloseButtonModal size={20} onClick={onClick}/>
       <PhotoImg>
         <SkeletonImage src={photo.src} alt={photo.title}/>

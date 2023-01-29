@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 // @ts-ignore
-import loginImg from "../../assets/login.jpg"
+import loginImg from "../../assets/img-login.jpg"
 
 export const FormsLogin = styled.div`
   display: grid;
@@ -39,14 +39,14 @@ export const SignUp = styled.div`
 export const ForgotPassword = styled(Link)`
   display: block;
   text-align: right;
-  color: ${({ theme }) => theme['gray-400']};
+  color: ${({theme}) => theme['gray-400']};
   padding: .1rem 0;
 
   &::after {
     content: '';
     display: block;
     position: absolute;
-    background: ${({ theme }) => theme['gray-400']};
+    background: ${({theme}) => theme['gray-400']};
     right: 0;
     height: 1px;
     width: 130px;
@@ -65,7 +65,7 @@ export const CreateButton = styled(Link)`
   &::after {
     content: '';
     display: flex;
-    background: ${({ theme }) => theme['gray-400']};
+    background: ${({theme}) => theme['gray-400']};
     height: 1px;
     width: 100%;
     border-radius: .2rem;
