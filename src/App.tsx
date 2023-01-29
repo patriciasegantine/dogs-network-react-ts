@@ -12,6 +12,7 @@ import { Login } from "./view/login/login";
 import { Home } from "./view/home/home";
 import { User } from "./view/user/user";
 import { Photo } from "./components/photo/components/photo";
+import { UserProfile } from "./view/user/components/user-profile";
 
 function App() {
   
@@ -45,6 +46,12 @@ function App() {
               path={'/photo/:id'}
               element={<Photo/>}
             />
+            
+            <Route
+              path={'/profile/:user'}
+              element={<UserProfile/>}
+            />
+          
           </Routes>
           <Footer/>
         </UserProvider>

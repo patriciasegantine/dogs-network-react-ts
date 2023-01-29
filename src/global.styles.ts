@@ -49,6 +49,7 @@ export const Title = styled.h1`
   line-height: 1;
   position: relative;
   z-index: 1;
+  margin-bottom: 1rem;
 
   &::after {
     content: '';
