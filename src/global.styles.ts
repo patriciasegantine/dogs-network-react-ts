@@ -33,6 +33,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
+export const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
+`
+
+export const AppBody = styled.main`
+  flex: 1;
+`
+
 export const Container = styled.div`
   max-width: 70rem;
   padding: 0 1rem;

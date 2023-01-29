@@ -1,20 +1,14 @@
 import styled from "styled-components";
 import { skeletonAnimation } from "../../../animation.styles";
 
-export const SkeletonWrapper = styled.div`
-  display: grid;
-
-`
-
 export const SkeletonImg = styled.img`
   display: block;
   max-width: 100%;
   grid-area: 1/1;
   opacity: 0;
   transition: .2s;
-  
-
 `
+
 export const SkeletonContainer = styled.div`
   grid-area: 1/1;
   height: 100%;

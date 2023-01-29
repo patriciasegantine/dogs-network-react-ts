@@ -31,7 +31,6 @@ export const FeedPhotos: React.FC<any> = ({user, setModalPhoto, page, setInfinit
       // @ts-ignore
       const {response, json} = await request(url, options)
       if (response.ok && json.length < totalItemsPage) setInfinitePage(false)
-      console.log(json)
     }
     
     fetchPhotos()

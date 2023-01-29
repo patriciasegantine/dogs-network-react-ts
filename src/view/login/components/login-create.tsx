@@ -1,6 +1,6 @@
 import React from 'react'
 import { ButtonPrimary, ErrorMessage, Title } from "../../../global.styles";
-import { CreateButton, SignUp } from "../login.styles";
+import { CreateButton, SectionLogin, SignUp } from "../login.styles";
 // @ts-ignore
 import { Input } from "../../../components/form/input";
 import { UseForm } from "../../../hooks/useForm";
@@ -23,8 +23,6 @@ export const LoginCreate = () => {
   const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault()
     
-    // if (username.validate() && email.validate() && password.validate()) {}
-    
     const {url, options} = USER_POST({
       username: username.value,
       email: email.value,
@@ -39,10 +37,10 @@ export const LoginCreate = () => {
   };
   
   return (
-    <section>
+    <SectionLogin className={'animeLeft'}>
       <Head title={'Create account'}/>
       
-      <Title className={'title'}>Sing in</Title>
+      <Title className={'title'}>Create Account</Title>
       <Form onSubmit={handleSubmit}>
         <Input
           label={'Username'}
@@ -80,6 +78,6 @@ export const LoginCreate = () => {
       
       </Form>
     
-    </section>
+    </SectionLogin>
   )
 }

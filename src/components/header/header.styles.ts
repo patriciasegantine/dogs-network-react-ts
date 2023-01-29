@@ -36,7 +36,6 @@ export const LogoTitle = styled.h3`
   font-family: var(--type-second);
   font-size: 2rem;
   font-weight: 200;
-
 `
 
 export const Login = styled(Link)`

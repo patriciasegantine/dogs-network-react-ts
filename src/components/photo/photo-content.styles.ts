@@ -61,9 +61,7 @@ export const PhotoContainerUrl = styled.div`
   ul, form {
     width: 100%;
     padding: 0;
-
   }
-
 `
 
 export const PhotoDetails = styled.div`
@@ -119,8 +117,8 @@ export const ButtonDeletePhoto = styled.button`
 
   &:hover, &:focus {
     outline: none;
-    border-color: var(--yellow-500);
-    background: var(--white);
+    border-color: ${({theme}) => theme['yellow-500']};
+    background: ${({theme}) => theme['white']};
     box-shadow: 0 0 0 1px #fea;
   }
 `
@@ -142,7 +140,7 @@ export const CloseButtonModal = styled(XCircle)`
 
   &:hover, &:focus {
     outline: none;
-    color: var(--yellow-500);
+    color: ${({theme}) => theme['yellow-500']};
   }
 `
 
@@ -158,7 +156,6 @@ export const CommentContent = styled.span`
 
 export const CommentItem = styled.div`
   padding-bottom: .5rem;
-
 `
 
 export const CommentAuthor = styled.b`
@@ -170,7 +167,6 @@ export const CommentForm = styled.form`
   grid-template-columns: 1fr auto;
   align-items: stretch;
   margin: 1rem;
-
 `
 
 export const CommentTextArea = styled.textarea`
@@ -184,11 +180,6 @@ export const CommentTextArea = styled.textarea`
   border-radius: .4rem;
   background: ${({theme}) => theme['gray-100']};
   transition: .2s;
-
-  &::placeholder {
-    //padding-top: .5rem;
-    //padding-left: .5rem;
-  }
 
   &:hover, &:focus {
     outline: none;
@@ -211,6 +202,6 @@ export const CommentButton = styled.button`
 
   &:hover, &:focus {
     outline: none;
-    color: var(--yellow-500);
+    color: ${({theme}) => theme['yellow-500']};
   }
 `

@@ -133,3 +133,15 @@ export function PASSWORD_RESET_POST(body: any,) {
     },
   }
 }
+
+export function METRICS_GET(token: any) {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+    },
+  }
+}

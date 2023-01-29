@@ -43,6 +43,7 @@ export const Feed: React.FC<FeedTypes> = ({user}) => {
       {
         modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto}/>
       }
+      
       {
         pages.map((page: any) =>
           <FeedPhotos

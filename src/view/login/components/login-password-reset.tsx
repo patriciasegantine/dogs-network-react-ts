@@ -7,6 +7,7 @@ import { UseForm } from "../../../hooks/useForm";
 import { PASSWORD_RESET_POST } from "../../../@api/api";
 import { useNavigate } from "react-router-dom";
 import { Head } from "../../../components/helper/head";
+import { SectionLogin } from "../login.styles";
 
 export const LoginPasswordReset: React.FC<any> = () => {
   
@@ -47,7 +48,7 @@ export const LoginPasswordReset: React.FC<any> = () => {
   }, [])
   
   return (
-    <div>
+    <SectionLogin className={'animeLeft'}>
       <Head title={'Reset Password'}/>
       
       <Title> Reset Password</Title>
@@ -64,6 +65,6 @@ export const LoginPasswordReset: React.FC<any> = () => {
         {error && <ErrorMessage>{error}</ErrorMessage>}
       
       </form>
-    </div>
+    </SectionLogin>
   )
 }

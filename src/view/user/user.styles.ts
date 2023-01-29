@@ -181,11 +181,43 @@ export const ImgPreview = styled.div`
   border-radius: 1rem;
   background-size: cover;
   background-position: center center;
-  
+
   &::after {
     content: '';
     display: block;
     height: 0;
     padding-bottom: 100%;
+  }
+`
+
+// user-metrics
+
+export const GraphContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 1rem 0;
+
+  @media (max-width: 40rem) {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const GraphItems = styled.div`
+  display: grid;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: .2rem;
+  min-height: 25rem;
+`
+
+export const GraphAccess = styled(GraphItems)`
+  grid-column: 1/3;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+  min-height: 6rem;
+
+  @media (max-width: 40rem) {
+    grid-column: 1;
   }
 `

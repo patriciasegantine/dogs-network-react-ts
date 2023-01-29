@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { animaLeft } from "../../animation.styles";
 // @ts-ignore
 import loginImg from "../../assets/img-login.jpg"
 
 export const FormsLogin = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  min-height: 100vh;
+  height: 100vh;
   gap: 2rem;
-  margin-top: 10rem;
 
   &:before {
     content: '';
@@ -29,49 +29,42 @@ export const FormsLogin = styled.div`
   }
 `
 
+export const SectionLogin = styled.section`
+  margin-top: 20vh;
+  position: relative;
+  animation: ${animaLeft} .3s forwards;
+  transform: translateX(-30px);
+  opacity: 0;
+`
+
 export const SignUp = styled.div`
   display: flex;
   gap: .5rem;
-  margin-top: 6rem;
+  margin-top: 20vh;
   margin-bottom: 2rem;
 `
 
 export const ForgotPassword = styled(Link)`
-  display: block;
-  text-align: right;
   color: ${({theme}) => theme['gray-400']};
   padding: .1rem 0;
+  margin-right: 0;
+  position: absolute;
+  right: 0;
 
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    background: ${({theme}) => theme['gray-400']};
-    right: 0;
-    height: 1px;
-    width: 130px;
-    border-radius: .2rem;
-  }
-
-  &:hover {
-    opacity: .6;
+  &:hover, &:focus {
+    outline: none;
+    color: ${({theme}) => theme['yellow-500']};
+    background: var(--white);
   }
 `
 
 export const CreateButton = styled(Link)`
   display: inline-block;
-  color: var(--gray-400);
+  color: ${({theme}) => theme['gray-400']};
 
-  &::after {
-    content: '';
-    display: flex;
-    background: ${({theme}) => theme['gray-400']};
-    height: 1px;
-    width: 100%;
-    border-radius: .2rem;
-  }
-
-  &:hover {
-    opacity: .8;
+  &:hover, &:focus {
+    outline: none;
+    color: ${({theme}) => theme['yellow-500']};
+    background: ${({theme}) => theme['white']};
   }
 `

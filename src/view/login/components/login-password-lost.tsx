@@ -5,6 +5,7 @@ import { UseForm } from "../../../hooks/useForm";
 import { UseFetch } from "../../../hooks/useFetch";
 import { PASSWORD_LOST_POST } from "../../../@api/api";
 import { Head } from "../../../components/helper/head";
+import { SectionLogin } from "../login.styles";
 
 export const LoginPasswordLost: React.FC<any> = () => {
   
@@ -24,32 +25,27 @@ export const LoginPasswordLost: React.FC<any> = () => {
       const {json} = await request(url, options)
       console.log(json)
     }
-    
   }
   
   return (
-    <div>
+    <SectionLogin className={'animeLeft'}>
       <Head title={'Forgot Password'}/>
       
       <Title> Forgot password</Title>
       
-      {data
-        ?
-        <div>
-          <p>{data}</p>
-          {/*<ButtonPrimary>Login</ButtonPrimary>*/}
-        </div>
+      <form onSubmit={handleSubmit}>
+        <Input type={'text'} name={'email'} label={'Email'} {...login}/>
+        {loading
+          ? <ButtonPrimary disabled> sending... </ButtonPrimary>
+          : <ButtonPrimary> Send email</ButtonPrimary>
+        }
         
-        : <form onSubmit={handleSubmit}>
-          <Input type={'text'} name={'email'} label={'Email'} {...login}/>
-          {loading
-            ? <ButtonPrimary disabled> sending... </ButtonPrimary>
-            : <ButtonPrimary> Send email</ButtonPrimary>
-          }
-          
-          {error && <ErrorMessage>{error}</ErrorMessage>}
+        {data && <p>{data}</p>}
         
-        </form>}
-    </div>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
+      
+      
+      </form>
+    </SectionLogin>
   )
 }

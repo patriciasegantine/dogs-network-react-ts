@@ -1,7 +1,7 @@
 import React from 'react'
 import './global.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { GlobalStyle } from "./global.styles";
+import { AppBody, AppContainer, GlobalStyle } from "./global.styles";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./@themes/defalultTheme";
 import { UserProvider } from "./context/userProvider";
@@ -18,51 +18,56 @@ import { NotFound } from "./components/not-found/not-found";
 function App() {
   
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
-        <UserProvider>
-          <GlobalStyle/>
-          <Header/>
-          <Routes>
-            <Route
-              path={'/'}
-              element={<Home/>}
-            />
+    <AppContainer>
+      <ThemeProvider theme={defaultTheme}>
+        <BrowserRouter>
+          <UserProvider>
+            <GlobalStyle/>
+            <Header/>
             
-            <Route
-              path={'/login/*'}
-              element={<Login/>}
-            />
-            
-            <Route
-              path={'/account/*'}
-              element={
-                <ProtectedRouter>
-                  <User/>
-                </ProtectedRouter>
-              }
-            />
-            
-            <Route
-              path={'/photo/:id'}
-              element={<Photo/>}
-            />
-            
-            <Route
-              path={'/profile/:user'}
-              element={<UserProfile/>}
-            />
-            
-            <Route
-              path={'*'}
-              element={<NotFound/>}
-            />
-          
-          </Routes>
-          <Footer/>
-        </UserProvider>
-      </BrowserRouter>
-    </ThemeProvider>
+            <AppBody>
+              <Routes>
+                <Route
+                  path={'/'}
+                  element={<Home/>}
+                />
+                
+                <Route
+                  path={'/login/*'}
+                  element={<Login/>}
+                />
+                
+                <Route
+                  path={'/account/*'}
+                  element={
+                    <ProtectedRouter>
+                      <User/>
+                    </ProtectedRouter>
+                  }
+                />
+                
+                <Route
+                  path={'/photo/:id'}
+                  element={<Photo/>}
+                />
+                
+                <Route
+                  path={'/profile/:user'}
+                  element={<UserProfile/>}
+                />
+                
+                <Route
+                  path={'*'}
+                  element={<NotFound/>}
+                />
+              
+              </Routes>
+            </AppBody>
+            <Footer/>
+          </UserProvider>
+        </BrowserRouter>
+      </ThemeProvider>
+    </AppContainer>
   )
 }
 

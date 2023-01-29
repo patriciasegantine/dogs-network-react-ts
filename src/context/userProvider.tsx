@@ -35,7 +35,7 @@ export const UserProvider = ({children}: any) => {
   
   const userLogin = async (username: string, password: string) => {
     const checkResponse = (response: any) => {
-      if (!response.ok) throw Error('Invalid email or password')
+      if (!response.ok) throw Error('email or password invalid')
     }
     
     try {

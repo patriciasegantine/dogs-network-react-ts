@@ -1,13 +1,15 @@
 import React from 'react';
-import { Container, Title } from "../../global.styles";
+import { Container } from "../../global.styles";
+import { NoData } from "../helper/no-data/no-data";
+import { NotFoundContainer, NotFoundTitle } from "./not-found.styles";
 
-export const NotFound = () => {
+export const NotFound: React.FC<any> = () => {
   return (
     <Container>
-      
-      <Title> Error: 404</Title>
-      <p>Page Not Found</p>
-    
+      <NotFoundContainer>
+        <NotFoundTitle> Error: 404</NotFoundTitle>
+        <NoData text={'Sorry, Page not found'}/>
+      </NotFoundContainer>
     </Container>
   );
 };

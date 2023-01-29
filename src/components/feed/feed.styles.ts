@@ -42,12 +42,6 @@ export const FeedImgItem = styled.span`
   }
 `
 
-export const FeedImg = styled.img`
-  grid-area: 1/1;
-  width: 100%;
-  height: 100%;
-`
-
 export const FeedViews = styled.span`
   display: none;
   align-items: center;

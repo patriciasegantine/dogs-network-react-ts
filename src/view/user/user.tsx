@@ -13,7 +13,6 @@ export const User = () => {
   
   const {data} = useContext<any>(UserContext)
   return (
-    // <Section>
     <Container>
       <UserHeader/>
       <Head title={'Account'}/>
@@ -42,6 +41,5 @@ export const User = () => {
       </Routes>
     
     </Container>
-    // </Section>
   );
 };

@@ -19,21 +19,19 @@ export const Form = styled.form`
 `
 
 export const InputForm = styled.input`
-
-  border: 1px solid var(--gray-100);
+  border: 1px solid ${({theme}) => theme['gray-100']};
   display: block;
   width: 100%;
   font-size: 1rem;
   padding: .8rem;
   border-radius: .4rem;
-  background: var(--gray-100);
+  background: ${({theme}) => theme['gray-100']};
   transition: .2s;
-
 
   &:focus, &:hover {
     outline: none;
-    border-color: var(--yellow-500);
-    background: var(--white);
+    border-color: ${({theme}) => theme['yellow-500']};
+    background: ${({theme}) => theme['white']};;
     box-shadow: 0 0 0 1px #fea;
   }
 `

@@ -7,7 +7,7 @@ import { COMMENT_POST } from "../../../@api/api";
 import { ErrorMessage } from "../../../global.styles";
 import { CommentAuthor, CommentContainer, CommentContent, CommentItem } from "../photo-content.styles";
 import { PhotoCommentsForm } from "./photo-comments-form";
-// @ts-ignore
+
 export const PhotoComments: React.FC<any> = ({id, comments}) => {
   
   const [comment, setComment] = useState<any>('')
@@ -34,6 +34,7 @@ export const PhotoComments: React.FC<any> = ({id, comments}) => {
   };
   
   useEffect(() => {
+    // @ts-ignore
     commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
   }, [comment])
   
@@ -46,7 +47,6 @@ export const PhotoComments: React.FC<any> = ({id, comments}) => {
           <CommentItem key={comment.comment_ID}>
             <CommentAuthor>{comment.comment_author}:</CommentAuthor>
             <CommentContent>{comment.comment_content}</CommentContent>
-            {/*<CommentContent>{comment.comment_date}</CommentContent>*/}
           </CommentItem>
         )}
       </CommentContainer>

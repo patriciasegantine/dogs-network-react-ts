@@ -1,10 +1,9 @@
 import React from 'react'
-// @ts-ignore
 import { Input } from '../../../components/form/input'
 import { UseForm } from '../../../hooks/useForm'
 import { UserContext } from '../../../context/userProvider'
 import { ButtonPrimary, ErrorMessage, Title } from '../../../global.styles'
-import { CreateButton, ForgotPassword, SignUp } from '../login.styles'
+import { CreateButton, ForgotPassword, SectionLogin, SignUp } from '../login.styles'
 import { RouteEnum } from "../../../@enum/Router-Enum";
 import { Form } from "../../../components/form/form.styles";
 
@@ -24,7 +23,7 @@ export const LoginForm = () => {
   }
   
   return (
-    <section className={'animeLeft'}>
+    <SectionLogin className={'animeLeft'}>
       <Title className={'title'}>Login</Title>
       <Form action="" onSubmit={handleSubmit}>
         <Input
@@ -41,14 +40,13 @@ export const LoginForm = () => {
           {...password}
         />
         <ForgotPassword to={RouteEnum.forgotPassword}> Forgot password?</ForgotPassword>
-        <div>
-          
-          {
-            loading
-              ? <ButtonPrimary disabled>loading...</ButtonPrimary>
-              : <ButtonPrimary>Sign in</ButtonPrimary>
-          }
-        </div>
+        
+        {
+          loading
+            ? <ButtonPrimary disabled>loading...</ButtonPrimary>
+            : <ButtonPrimary>Sign in</ButtonPrimary>
+        }
+        
         
         {error && <ErrorMessage>{error}</ErrorMessage>}
       
@@ -60,6 +58,6 @@ export const LoginForm = () => {
       </SignUp>
     
     
-    </section>
+    </SectionLogin>
   )
 }

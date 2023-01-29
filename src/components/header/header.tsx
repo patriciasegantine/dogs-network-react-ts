@@ -17,7 +17,7 @@ export const Header = () => {
           <NavLink to={'/'} aria-label={'Dogs - Home'}>
             <Logo>
               <IconLogo/>
-              <LogoTitle>Pets</LogoTitle>
+              <LogoTitle>Dogs</LogoTitle>
             </Logo>
           </NavLink>
           
@@ -31,7 +31,7 @@ export const Header = () => {
           ) : (
             <>
               <Login to={RouteEnum.login}>
-                Sing in
+                Login
                 <User size={16}/>
               </Login>
             </>
