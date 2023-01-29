@@ -6,6 +6,7 @@ import { UserPhotoPost } from "./components/user-photo-post";
 import { UserMetrics } from "./components/user-metrics";
 import { Feed } from "../../components/feed/feed";
 import { UserContext } from "../../context/userProvider";
+import { NotFound } from "../../components/not-found/not-found";
 
 export const User = () => {
   
@@ -29,6 +30,11 @@ export const User = () => {
         <Route
           path={'/post'}
           element={<UserPhotoPost/>}
+        />
+        
+        <Route
+          path={'*'}
+          element={<NotFound/>}
         />
       
       </Routes>

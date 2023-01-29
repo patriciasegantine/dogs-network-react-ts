@@ -8,6 +8,7 @@ import { UserContext } from '../../context/userProvider'
 import { RouteEnum } from '../../@enum/Router-Enum'
 import { Container } from '../../global.styles'
 import { FormsLogin } from './login.styles'
+import { NotFound } from "../../components/not-found/not-found";
 
 export const Login = () => {
   
@@ -38,6 +39,11 @@ export const Login = () => {
           <Route
             path={'/reset'}
             element={<LoginPasswordReset/>}
+          />
+          
+          <Route
+            path={'*'}
+            element={<NotFound/>}
           />
         </Routes>
       </FormsLogin>

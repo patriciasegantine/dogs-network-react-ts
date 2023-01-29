@@ -13,6 +13,7 @@ import { Home } from "./view/home/home";
 import { User } from "./view/user/user";
 import { Photo } from "./components/photo/components/photo";
 import { UserProfile } from "./view/user/components/user-profile";
+import { NotFound } from "./components/not-found/not-found";
 
 function App() {
   
@@ -50,6 +51,11 @@ function App() {
             <Route
               path={'/profile/:user'}
               element={<UserProfile/>}
+            />
+            
+            <Route
+              path={'*'}
+              element={<NotFound/>}
             />
           
           </Routes>
